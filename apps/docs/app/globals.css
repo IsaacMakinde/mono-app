@@ -21,6 +21,15 @@
     #e92a67 360deg
   );
 }
+/* Make navbar items visible on smaller screens */
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    display: block; /* Show the menu as a block element */
+  }
+  .navbar-item {
+    display: inline-block; /* Show individual menu items inline */
+  }
+}
 
 * {
   box-sizing: border-box;
