@@ -1,65 +1,58 @@
-import Link from "next/link";
-import { use } from "react";
+import React, { use } from "react";
+import type { Repositories } from "../interfaces/i-repositories";
 
-async function getCharacters() {
-  const res = await fetch("https://rickandmortyapi.com/api/character");
-  return res.json();
+async function getRepositories(): Promise<Repositories[]> {
+  const response = await fetch(
+    "https://api.github.com/users/IsaacMakinde/repos"
+  );
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  const data = (await response.json()) as Repositories[];
+  return data;
 }
 
-async function getRepos() {
-  const res = await fetch("https://api.github.com/users/IsaacMakinde/repos");
-  return res.json();
-}
+export default function Projects(): JSX.Element {
+  const repoData = use(getRepositories());
 
-export default function Projects() {
-  const allCharacters = use(getCharacters());
-  const allRepositories = use(getRepos());
   return (
-    <div>
-      <div>
-        <h2>All Characters</h2>
-        {allCharacters?.results.map((character) => (
-          <ul key={character.id}>
-            <li>{character.name}</li>
-          </ul>
-        ))}
-      </div>
-      <hr />
-      <div>
-        <h1>My Repos</h1>
-        {allRepositories?.map((repo) => (
-          <div className="card" key={repo.id}>
-            <header className="card-header">
-              <p className="card-header-title">{repo.name}</p>
-              <button aria-label="more options" className="card-header-icon">
-                <span className="icon">
-                  <i aria-hidden="true" className="fas fa-angle-down" />
-                </span>
-              </button>
-            </header>
-            <div className="card-content">
-              <div className="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
-                <br />
-                <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    <section className="hero is-info is-fullheight">
+      <div className="hero-body">
+        <div className="container has-text-centered">
+          <div className="columns is-multiline is-mobile">
+            {repoData.map((repo) => (
+              <div
+                className="column is-6-desktop is-6-tablet is-8-mobile is-offset-2-mobile"
+                key={repo.id}
+              >
+                <div className="card">
+                  <header className="card-header">
+                    <p className="card-header-title">{repo.name}</p>
+                  </header>
+
+                  <div className="card-content">
+                    <div className="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.s
+                      {repo.description}
+                    </div>
+                  </div>
+
+                  <div className="card-footer has-text-centered">
+                    <a
+                      className="card-footer-item has-text-primary"
+                      href={`${repo.html_url}`}
+                    >
+                      <p className="titles-is-2">Check it out on Github!</p>
+
+                      <i className="fa-brands fa-github fa-beat fa-lg custom-icon-green icon-with-gap" />
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-            <footer className="card-footer">
-              <a className="card-footer-item" href="/">
-                Save
-              </a>
-              <a className="card-footer-item" href="/">
-                Edit
-              </a>
-              <a className="card-footer-item" href="/">
-                Delete
-              </a>
-            </footer>
-            <br />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

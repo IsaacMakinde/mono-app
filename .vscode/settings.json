@@ -1,4 +1,10 @@
 {
   "editor.formatOnSave": true,
-  "cSpell.words": ["fullheight", "fullwidth", "removebg", "Turborepo"]
+  "cSpell.words": [
+    "fullheight",
+    "fullwidth",
+    "removebg",
+    "signoff",
+    "Turborepo"
+  ]
 }
