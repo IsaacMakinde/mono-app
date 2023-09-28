@@ -35,10 +35,10 @@ module.exports = {
     },
   },
   ignorePatterns: ["node_modules/", "dist/"],
-  // add rules configurations here
   rules: {
     "import/no-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "import/consistent-type-imports": "off",
+    "turbo/no-undeclared-env-vars": "off",
   },
 };

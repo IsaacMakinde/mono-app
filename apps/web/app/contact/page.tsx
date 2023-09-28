@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 export default function Page(): JSX.Element {
   return (
     <div className="hero-body">
@@ -39,24 +37,46 @@ export default function Page(): JSX.Element {
               </a>
             </div>
           </div>
-          <form action="https://api.web3forms.com/submit" className="column is-one-third has-text-left" method="POST">
-          <input name="access_key" type="hidden" value="690241ff-ba2b-466d-97f6-98d53f7eb0fb" />
+          <form
+            action="https://api.web3forms.com/submit"
+            className="column is-one-third has-text-left"
+            method="POST"
+          >
+            <input
+              name="access_key"
+              type="hidden"
+              value="690241ff-ba2b-466d-97f6-98d53f7eb0fb"
+            />
             <div className="field">
               <label className="label">
                 Name
-                <input className="input is-medium" name="name" required type="text" />
+                <input
+                  className="input is-medium"
+                  name="name"
+                  required
+                  type="text"
+                />
               </label>
             </div>
             <div className="field">
               <label className="label">
                 Email
-                <input className="input is-medium" name="email" required type="text" />
+                <input
+                  className="input is-medium"
+                  name="email"
+                  required
+                  type="text"
+                />
               </label>
             </div>
             <div className="field">
               <label className="label">
                 Message
-                <textarea className="textarea is-medium" name="message" required  />
+                <textarea
+                  className="textarea is-medium"
+                  name="message"
+                  required
+                />
               </label>
             </div>
             <div className="field" data-captcha="true" />

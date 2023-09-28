@@ -15,6 +15,9 @@
   margin: 0;
 }
 
+.navbar {
+  border-bottom: 1px solid #ddd;
+}
 html,
 body {
   max-width: 100vw;
@@ -44,6 +47,16 @@ a {
 
 .icon-with-gap {
   margin-left: 8px;
+}
+
+/* styles.css */
+.hero-body {
+  background: linear-gradient(
+    to bottom,
+    #ff5733,
+    #ff9800
+  ); /* Replace with your own gradient colors */
+  /* Additional background properties as needed */
 }
 
 @media screen and (min-width: 768px) {

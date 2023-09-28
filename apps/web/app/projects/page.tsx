@@ -1,19 +1,10 @@
 import React, { use } from "react";
-import type { Repositories } from "../interfaces/i-repositories";
-
-async function getRepositories(): Promise<Repositories[]> {
-  const response = await fetch(
-    "https://api.github.com/users/IsaacMakinde/repos"
-  );
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  const data = (await response.json()) as Repositories[];
-  return data;
-}
+import Image from "next/image";
+import { getRepositories } from "../../services/githubapi";
 
 export default function Projects(): JSX.Element {
-  const repoData = use(getRepositories());
+  const username = "IsaacMakinde";
+  const repoData = use(getRepositories(username));
 
   return (
     <section className="hero is-info is-fullheight">
@@ -30,11 +21,20 @@ export default function Projects(): JSX.Element {
                     <p className="card-header-title">{repo.name}</p>
                   </header>
 
+                  <div className="card-image">
+                    <figure className="image is-4by3">
+                      <Image
+                        alt="An image of a pair of glasses"
+                        className=""
+                        height={300}
+                        src={repo.owner.avatar_url}
+                        width={300}
+                      />
+                    </figure>
+                  </div>
+
                   <div className="card-content">
-                    <div className="content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.s
-                      {repo.description}
-                    </div>
+                    <div className="content">{repo.description}</div>
                   </div>
 
                   <div className="card-footer has-text-centered">
