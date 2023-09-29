@@ -22,9 +22,6 @@ export default function RootLayout({
           <nav className="navbar">
             <div className="container">
               <div className="navbar-brand has-text-centered">
-                {/* <a className="navbar-item" href="../">
-                  <strong>Create Turbo</strong>
-                </a> */}
                 <figure className="image is-96x96 no-image-background ">
                   <Image
                     alt="An image of a pair of glasses"
@@ -57,7 +54,6 @@ export default function RootLayout({
           </nav>
         </div>
         <section className="hero is-fullheight">{children}</section>
-        {/* <footer className="footer"></footer> */}
       </body>
     </html>
   );

@@ -49,14 +49,8 @@ a {
   margin-left: 8px;
 }
 
-/* styles.css */
 .hero-body {
-  background: linear-gradient(
-    to bottom,
-    #ff5733,
-    #ff9800
-  ); /* Replace with your own gradient colors */
-  /* Additional background properties as needed */
+  background: linear-gradient(to bottom, #ff5733, #ff9800);
 }
 
 @media screen and (min-width: 768px) {
