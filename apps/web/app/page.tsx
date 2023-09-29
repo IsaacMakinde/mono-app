@@ -5,11 +5,11 @@ export default function Page(): JSX.Element {
     <section className="hero is-info is-fullheight">
       <div className="hero-body">
         <div className="container has-text-centered">
-          <div className="columns is-8 is-variable">
+          <div className="columns is-1 is-variable">
             <div className="columns is-two-thirds has-text-left">
               <div className="is-flex-direction-row">
-                <h1 className="title is-1">About me</h1>
-                <p className="is-size-4">
+                <h1 className="title is-2">About me</h1>
+                <p className="is-size-4  is-size-6-mobile">
                   My name is Isaac Makinde, and I{`'`}m in my final year of
                   Computer Science at Dublin City University. I{`'`}m very keen
                   to start working as soon as I finish my degree. I have prior

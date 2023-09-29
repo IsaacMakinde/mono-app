@@ -5,10 +5,10 @@ export default function Page(): JSX.Element {
     <section className="hero is-info is-fullheight">
       <div className="hero-body">
         <div className="container has-text-centered">
-          <div className="columns is-8 is-variable">
+          <div className="columns is-1 is-variable">
             <div className="column is-two-thirds has-text-left">
               <h1 className="title is-2">Contact Me</h1>
-              <p className="is-size-4">
+              <p className="is-size-4 is-size-6-mobile">
                 Thank you for considering reaching out to me. I appreciate your
                 interest and am eager to assist you in any way I can. I{`'`}m
                 here to make your experience as smooth and productive as
