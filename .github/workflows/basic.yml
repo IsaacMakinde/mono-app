@@ -42,10 +42,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install required tool
-        run: |
-        # Install the tool using the appropriate package manager
-        # For example, if it's a Node.js tool, you might use npm or yarn
-        npm install -g turbo-cli
+        run: npm install -g turbo-cli
 
       - name: run linter
         run: turbo lint
