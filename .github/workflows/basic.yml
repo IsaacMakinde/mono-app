@@ -44,6 +44,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install required tool
+        run: npm install -g turbo-cli
+
       - name: Run linter
         run: turbo lint
 
