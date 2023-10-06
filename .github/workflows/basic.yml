@@ -6,6 +6,8 @@ on:
   pull_request:
     types: [opened, synchronize]
 
+  workflow_dispatch:
+
 jobs:
   build:
     name: Build
@@ -53,7 +55,7 @@ jobs:
         run: npm run lint
 
       - name: Find file
-        run: cd mono-app\apps\web\.turbo
+        run: dir
 
       - name: Archive lint results
         uses: actions/upload-artifact@v2
