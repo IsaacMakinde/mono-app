@@ -53,7 +53,7 @@ jobs:
         run: npm run lint
 
       - name: Find file
-        run: cd .turbo && find . -name "turbo-lint.log" -print
+        run: cd mono-app/apps/web/.turbo && find . -name "turbo-lint.log" -print
 
       - name: Archive lint results
         uses: actions/upload-artifact@v2
