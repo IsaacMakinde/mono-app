@@ -58,4 +58,4 @@ jobs:
         run: cd apps/web/.turbo && find . -name "turbo-lint.log" -type f -print | dir
 
       - name: Archive lint results
-        run: cd apps/web/.turbo && tar -czvf lint-results.tar.gz turbo-lint.log
+        run: dir
