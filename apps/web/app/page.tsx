@@ -31,7 +31,6 @@ export default function Page(): JSX.Element {
                 </a>
               </div>
             </div>
-            <div className="column is-one-third">Image of myself pending</div>
           </div>
         </div>
       </div>
